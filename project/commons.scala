@@ -9,6 +9,20 @@ object Settings {
 		scalaVersion := "2.12.4",
 		scalacOptions ++= Seq("-unchecked", "-deprecation", "-encoding", "utf8", "-Xlint"),
 		licenses := Seq("Apache 2.0" -> url("https://opensource.org/licenses/Apache-2.0")),
+		developers := List(
+			Developer(
+				id = "rockymadden",
+				name = "Rocky Madden",
+				email = "github@rockymadden.com",
+				url = url("https://rockymadden.com/")
+			),
+			Developer(
+				id = "ndelaforge",
+				name = "Nicolas Delaforge",
+				email = "nicolas.delaforge@mnemotix.com",
+				url = url("https://www.mnemotix.com/")
+			)
+		),
 		pomExtra :=
 			<url>http://rockymadden.com/stringmetric/</url>
 				<licenses>
@@ -28,9 +42,15 @@ object Settings {
 						<url>http://rockymadden.com/</url>
 					</developer>
 				</developers>,
-		credentials += Credentials(Path.userHome / ".ivy2" / ".credentials"),
+		pomIncludeRepository := { _ => false },
 		publishMavenStyle := true,
-		publishTo := Some("Sonatype" at "https://oss.sonatype.org/service/local/staging/deploy/maven2"),
-		resolvers ++= Seq(DefaultMavenRepository)
+		publishArtifact := true,
+		publishTo := Some(
+			if (isSnapshot.value)
+				Opts.resolver.sonatypeSnapshots
+			else
+				Opts.resolver.sonatypeStaging
+		),
+		updateOptions := updateOptions.value.withGigahorse(false)
 	)
 }
