@@ -1,3 +1,4 @@
+import com.typesafe.sbt.pgp.PgpKeys._
 import sbt.Keys._
 import sbt._
 
