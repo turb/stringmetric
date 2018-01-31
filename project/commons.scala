@@ -5,7 +5,7 @@ import sbt._
 object Settings {
 
 	val commonSettings: Seq[Def.Setting[_]] = Seq(
-		organization := "com.rockymadden.stringmetric",
+		organization := "com.mnemotix",
 		homepage := Some(url("https://rockymadden.com/stringmetric/")),
 		scalaVersion := "2.12.4",
 		scalacOptions ++= Seq("-unchecked", "-deprecation", "-encoding", "utf8", "-Xlint"),
