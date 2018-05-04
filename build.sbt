@@ -5,6 +5,7 @@ name := "stringmetric"
 // END
 
 lazy val root = Project("stringmetric", file("."))
+  .enablePlugins(TransparencyPlugin) // TRM specific
 	.settings(Settings.commonSettings)
 	.settings(
 		publishArtifact := false,
@@ -13,6 +14,7 @@ lazy val root = Project("stringmetric", file("."))
 	.aggregate(core, cli)
 
 lazy val core = Project("stringmetric-core", file("core"))
+	.enablePlugins(TransparencyPlugin) // TRM specific
 	.settings(Settings.commonSettings)
 	.settings(
 		libraryDependencies ++= Seq(
@@ -22,6 +24,7 @@ lazy val core = Project("stringmetric-core", file("core"))
 	)
 
 lazy val cli = Project("stringmetric-cli", file("cli"))
+	.enablePlugins(TransparencyPlugin) // TRM specific
 	.settings(Settings.commonSettings)
 	.settings(
 		libraryDependencies ++= Seq(
