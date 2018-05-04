@@ -1,9 +1,14 @@
 
+// Needed by TRM build
+scalaVersion := "2.11.12"
+name := "stringmetric"
+// END
+
 lazy val root = Project("stringmetric", file("."))
 	.settings(Settings.commonSettings)
 	.settings(
 		publishArtifact := false,
-		version in ThisBuild := "0.28.0-SNAPSHOT"
+		version in ThisBuild := "0.28.0.trm1"
 	)
 	.aggregate(core, cli)
 
