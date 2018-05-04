@@ -46,15 +46,16 @@ object Settings {
 				</developers>,
 		pomIncludeRepository := { _ => false },
 		publishMavenStyle := true,
-		publishArtifact := true,
-		updateOptions := updateOptions.value.withGigahorse(false),
-		updateOptions := updateOptions.value.withCachedResolution(true),
-		useGpg := true,
-		publishTo := Some(
-			if (isSnapshot.value)
-				Opts.resolver.sonatypeSnapshots
-			else
-				Opts.resolver.sonatypeStaging
-		)
+		publishArtifact := true //, TRM disabled
+		// updateOptions := updateOptions.value.withGigahorse(false),
+		// updateOptions := updateOptions.value.withCachedResolution(true),
+		// useGpg := true,
+		//publishTo := Some(
+		//	if (isSnapshot.value)
+		//		Opts.resolver.sonatypeSnapshots
+		//	else
+		//		Opts.resolver.sonatypeStaging
+		//)
+		// End TRM disabled
 	)
 }
