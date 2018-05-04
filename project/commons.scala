@@ -45,7 +45,7 @@ object Settings {
 					</developer>
 				</developers>,
 		pomIncludeRepository := { _ => false },
-		publishMavenStyle := true,
+		// publishMavenStyle := true, TRM disabled
 		publishArtifact := true //, TRM disabled
 		// updateOptions := updateOptions.value.withGigahorse(false),
 		// updateOptions := updateOptions.value.withCachedResolution(true),
