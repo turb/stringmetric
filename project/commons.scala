@@ -11,6 +11,7 @@ object Settings {
 		crossScalaVersions := Seq("2.11.12", "2.12.6"),
 		scalacOptions ++= Seq("-unchecked", "-deprecation", "-encoding", "utf8", "-Xlint"),
 		licenses := Seq("Apache 2.0" -> url("https://opensource.org/licenses/Apache-2.0")),
+		/*
 		developers := List(
 			Developer(
 				id = "rockymadden",
@@ -45,17 +46,17 @@ object Settings {
 					</developer>
 				</developers>,
 		pomIncludeRepository := { _ => false },
-		// publishMavenStyle := true, TRM disabled
-		publishArtifact := true //, TRM disabled
-		// updateOptions := updateOptions.value.withGigahorse(false),
-		// updateOptions := updateOptions.value.withCachedResolution(true),
-		// useGpg := true,
-		//publishTo := Some(
-		//	if (isSnapshot.value)
-		//		Opts.resolver.sonatypeSnapshots
-		//	else
-		//		Opts.resolver.sonatypeStaging
-		//)
-		// End TRM disabled
+		publishMavenStyle := true, */
+		publishArtifact := true /*, TRM disabled
+		updateOptions := updateOptions.value.withGigahorse(false),
+		updateOptions := updateOptions.value.withCachedResolution(true),
+		useGpg := true,
+		publishTo := Some(
+			if (isSnapshot.value)
+				Opts.resolver.sonatypeSnapshots
+			else
+				Opts.resolver.sonatypeStaging
+		)
+		*/
 	)
 }
