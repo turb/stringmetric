@@ -1,4 +1,3 @@
-
 // Needed by TRM build
 scalaVersion := "2.11.12"
 name := "stringmetric"

@@ -1,6 +1,7 @@
 import com.typesafe.sbt.pgp.PgpKeys._
 import sbt.Keys._
 import sbt._
+import sbtghpackages.GitHubPackagesKeys.githubRepository
 
 object Settings {
 
@@ -47,6 +48,7 @@ object Settings {
 				</developers>,
 		pomIncludeRepository := { _ => false },
 		publishMavenStyle := true, */
+		githubRepository := "trm-stringmetric",
 		publishArtifact := true /*, TRM disabled
 		updateOptions := updateOptions.value.withGigahorse(false),
 		updateOptions := updateOptions.value.withCachedResolution(true),
