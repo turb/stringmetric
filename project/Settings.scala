@@ -8,8 +8,8 @@ object Settings {
 	val commonSettings: Seq[Def.Setting[_]] = Seq(
 		organization := "com.mnemotix",
 		homepage := Some(url("https://rockymadden.com/stringmetric/")),
-		scalaVersion := "2.12.6",
-		crossScalaVersions := Seq("2.11.12", "2.12.6"),
+		scalaVersion := "2.12.13",
+		crossScalaVersions := Seq("2.11.12", "2.12.13", "2.13.5"),
 		scalacOptions ++= Seq("-unchecked", "-deprecation", "-encoding", "utf8", "-Xlint"),
 		licenses := Seq("Apache 2.0" -> url("https://opensource.org/licenses/Apache-2.0")),
 		/*
